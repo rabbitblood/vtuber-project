@@ -15,6 +15,7 @@
   --color-font: white;
   --color-page-background: #323232;
   --color-component-background: #4a4a4a;
+  --color-header-footer: #444;
 }
 
 html,
@@ -3030,7 +3031,7 @@ body.landing #page-wrapper {
 }
 
 #header {
-  background: #444;
+  background: var(--color-header-footer);
   color: #bbb;
   cursor: default;
   height: 3.25em;
@@ -3365,7 +3366,7 @@ body.landing #main {
 /* Footer */
 
 #footer {
-  background: #f0f0f0;
+  background: var(--color-header-footer);
   padding: 4em 0 6em 0;
   text-align: center;
 }
