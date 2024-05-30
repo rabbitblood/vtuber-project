@@ -1,0 +1,75 @@
+.center {
+  text-align: center;
+}
+
+.desktop-left {
+  text-align: left;
+}
+
+.popular-vtuber-container-box {
+  padding: 1rem;
+}
+
+.popular-vtuber-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.popular-vtuber-container img {
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  width: 100%;
+}
+
+.popular-vtuber-detail-section {
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.videos-section-container {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap: 1rem;
+}
+
+.videos-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.vtuber-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-title {
+  text-align: center;
+  background-color: black;
+  width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  .popular-vtuber-container {
+    display: block;
+  }
+
+  .popular-vtuber-detail-section {
+    padding: 1rem;
+    text-align: unset;
+  }
+
+  .videos-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
