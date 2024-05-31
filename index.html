@@ -13,10 +13,59 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
-
     <link rel="stylesheet" href="assets/css/custom.css" />
   </head>
   <body class="landing is-preload" id="body">
+    <div class="pop-up-container about">
+      <div>
+        <div class="pop-up">
+          <div class="pop-up-header">
+            <h3>弹出框标题</h3>
+          </div>
+          <div class="pop-up-content">
+            <p>
+              这里是一些内容 Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Blanditiis itaque ad explicabo enim saepe nulla eaque ullam,
+              dolore dignissimos. Voluptate vel reiciendis quasi delectus
+              corrupti unde et aut, iste officiis maiores ratione nisi quis.
+              Doloribus suscipit nulla similique tempora quasi nostrum quisquam
+              vero excepturi recusandae fuga inventore libero, aliquid iure
+              deleniti eius ratione ullam asperiores provident ducimus ut
+              tempore pariatur? Ullam repudiandae repellat id quisquam. Eaque
+              nam quia, aspernatur incidunt nesciunt ut sapiente officiis
+              laborum animi nisi
+            </p>
+          </div>
+          <div
+            class="button special close-pop-up"
+            onclick="closeAboutPopUpHandler()"
+          >
+            Confirm
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pop-up-container language">
+      <div>
+        <div class="pop-up">
+          <div class="pop-up-header">
+            <h3>弹出框标题</h3>
+          </div>
+          <div class="pop-up-content">
+            <button class="button" onclick="languegeSelectHandler('english')">
+              english
+            </button>
+            <hr />
+            <button class="button" onclick="languegeSelectHandler('chinese')">
+              中文
+            </button>
+          </div>
+          <!-- <div class="button special close-pop-up">Confirm</div> -->
+        </div>
+      </div>
+    </div>
+
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header" class="alt">
@@ -30,16 +79,21 @@
                 <li><a href="#ai">爱酱的故事</a></li>
                 <li><a href="#gu">古拉的故事</a></li>
                 <li><a href="#vox">Vox的故事</a></li>
-                <li><a href="">更多故事</a></li>
-                <li><a href="">关于作者</a></li>
+                <li><a href="#more">更多故事</a></li>
+                <li>
+                  <a href="#" class="about-button" onclick="openPopUp('about')"
+                    >关于作者</a
+                  >
+                </li>
               </ul>
             </li>
             <li>
-              <a href="#" class="icon solid fa-angle-down">语言</a>
-              <ul>
-                <li><a href="">中文</a></li>
-                <li><a href="">English</a></li>
-              </ul>
+              <a
+                class="langueage-button"
+                href="#"
+                onclick="openPopUp('language')"
+                >语言</a
+              >
             </li>
           </ul>
         </nav>
@@ -233,7 +287,7 @@
 
         <!-- fourth section -->
 
-        <div class="box alt special fit">
+        <div class="box alt special fit" id="more">
           <p></p>
           <h2 class="">fourth section</h2>
           <p></p>
@@ -320,5 +374,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/popup.js"></script>
   </body>
 </html>

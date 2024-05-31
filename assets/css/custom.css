@@ -83,6 +83,52 @@
   text-align: left;
 }
 
+.pop-up-container {
+  display: none;
+}
+
+.pop-up-container.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999999999;
+}
+
+.pop-up {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--color-component-background);
+  padding: 1rem;
+  width: 80vw;
+  min-height: 50vh;
+  max-width: 800px;
+  border-radius: 5px;
+}
+
+.pop-up-content {
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-pop-up {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  transform: translateY(150%);
+}
+
 @media screen and (max-width: 736px) {
   .popular-vtuber-container {
     display: block;
