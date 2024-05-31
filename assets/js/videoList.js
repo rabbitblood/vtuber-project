@@ -60,15 +60,24 @@ const videoData = {
   },
 };
 
+const currentVideos = [];
+
 const videosContainer = document.querySelector(".videos-container");
 const refreshVideoButton = document.querySelector(".refresh-video");
 
 const pick3RandomVideos = () => {
-  const videos = Object.values(videoData.videos).slice();
+  const videos = Object.values(videoData.videos)
+    .slice()
+    .filter((video) => {
+      return !currentVideos.includes(video);
+    });
+  currentVideos.length = 0;
+
   const randomVideos = [];
   for (let i = 0; i < 3; i++) {
     const randomIndex = Math.floor(Math.random() * videos.length);
     randomVideos.push(videos[randomIndex]);
+    currentVideos.push(videos[randomIndex]);
     videos.splice(randomIndex, 1);
   }
   return randomVideos;
@@ -103,9 +112,20 @@ const initVideos = () => {
 // only populate random 3 videos
 const refreshVideos = () => {
   //move the current videos aside
-  videosContainer.innerHTML = "";
-  //generate new random 3 videos
-  initVideos();
+  videosContainer.classList.remove("show");
+  videosContainer.classList.add("hide");
+
+  setTimeout(() => {
+    //remove all the current videos
+    while (videosContainer.firstChild) {
+      videosContainer.removeChild(videosContainer.firstChild);
+    }
+    //generate new random 3 videos
+    initVideos();
+    //remove hide class after removing all the videos
+    videosContainer.classList.remove("hide");
+    videosContainer.classList.add("show");
+  }, 1000);
 };
 
 refreshVideoButton.addEventListener("click", () => refreshVideos());

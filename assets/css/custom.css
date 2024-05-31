@@ -48,6 +48,15 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   min-height: 20rem;
+  animation: 1s forwards;
+}
+
+.videos-container.show {
+  animation: move-in-from-right 1s forwards;
+}
+
+.videos-container.hide {
+  animation: move-out-to-left 1s forwards;
 }
 
 .vtuber-video {
@@ -57,11 +66,11 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+  transition: 0.5s;
   transform: scale(1);
 }
 
 .vtuber-video:hover {
-  transition: 0.5s;
   transform: scale(1.05);
 }
 .video-title {
@@ -170,6 +179,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    min-height: 100vh;
   }
 
   .citation-group {
@@ -184,5 +194,23 @@
   .appendix-text {
     margin: 2rem;
     text-align: center;
+  }
+}
+
+@keyframes move-out-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes move-in-from-right {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
