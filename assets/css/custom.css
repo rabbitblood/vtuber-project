@@ -57,6 +57,32 @@
   width: 100%;
 }
 
+.citations-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.citation-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.appendix-contaienr {
+  margin: 2rem;
+  max-width: 500px;
+}
+
+.appendix-title {
+  margin: 2rem;
+  text-align: left;
+}
+.appendix-text {
+  margin: 2rem;
+  text-align: left;
+}
+
 @media screen and (max-width: 736px) {
   .popular-vtuber-container {
     display: block;
@@ -71,5 +97,19 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .citation-group {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .appendix-title {
+    margin: 2rem;
+    text-align: center;
+  }
+  .appendix-text {
+    margin: 2rem;
+    text-align: center;
   }
 }
