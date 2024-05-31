@@ -7,6 +7,14 @@
   text-align: left;
 }
 
+.text-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
 /** -----------------------popular vtuber----------------------- */
 .popular-vtuber-container-box {
   padding: 1rem;

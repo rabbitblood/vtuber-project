@@ -3279,6 +3279,21 @@ body.landing #page-wrapper {
   text-align: center;
 }
 
+#banner.ai {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.BydB5-soZOOblbR6EsgnkAHaEK%26pid%3DApi&f=1&ipt=4252d140552ebdb72d2fd40fc5c6f83746ff8f26821873b6e3f5642328c39c76&ipo=images"),
+    url("../../images/banner-ai.jpg");
+}
+
+#banner.gura {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.baUKufGhlEWcIWytUPcZnQHaEK%26pid%3DApi&f=1&ipt=eb2007adf0fa6687ea332c67fd6a9ad0ecca860a2494200dce178dc7918183fd&ipo=images"),
+    url("../../images/banner-ai.jpg");
+}
+
+#banner.vox {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp10968119.jpg&f=1&nofb=1&ipt=26396dc65e673e72faafef056d0ba52b2262df5d200445ba0f61bf55934d331b&ipo=images"),
+    url("../../images/banner-ai.jpg");
+}
+
 #banner :last-child {
   margin-bottom: 0;
 }
