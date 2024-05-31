@@ -4,81 +4,96 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+function addOnClickToNavList() {
+  // Create a temporary container to hold the generated nav list HTML
+  const tempContainer = $("<div></div>").html($("#nav").navList());
 
-	var	$window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$banner = $('#banner');
+  // Iterate over each generated link and add the onclick attribute from the original
+  tempContainer.find("a").each(function () {
+    const originalHref = $(this).attr("href");
+    console.log(originalHref);
+    const originalOnClick = $(`#nav a[href="${originalHref}"]`).attr("onclick");
+    console.log(originalOnClick);
+    if (originalOnClick) {
+      $(this).attr("onclick", originalOnClick);
+    }
+  });
 
-	// Breakpoints.
-		breakpoints({
-			wide:      ( '1281px',  '1680px' ),
-			normal:    ( '981px',   '1280px' ),
-			narrow:    ( '737px',   '980px'  ),
-			narrower:  ( '737px',   '840px'  ),
-			mobile:    ( '481px',   '736px'  ),
-			mobilep:   ( null,      '480px'  )
-		});
+  return tempContainer.html();
+}
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+(function ($) {
+  var $window = $(window),
+    $body = $("body"),
+    $header = $("#header"),
+    $banner = $("#banner");
 
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			alignment: 'right'
-		});
+  // Breakpoints.
+  breakpoints({
+    wide: ("1281px", "1680px"),
+    normal: ("981px", "1280px"),
+    narrow: ("737px", "980px"),
+    narrower: ("737px", "840px"),
+    mobile: ("481px", "736px"),
+    mobilep: (null, "480px"),
+  });
 
-	// NavPanel.
+  // Play initial animations on page load.
+  $window.on("load", function () {
+    window.setTimeout(function () {
+      $body.removeClass("is-preload");
+    }, 100);
+  });
 
-		// Button.
-			$(
-				'<div id="navButton">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-				'</div>'
-			)
-				.appendTo($body);
+  // Dropdowns.
+  $("#nav > ul").dropotron({
+    alignment: "right",
+  });
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+  // NavPanel.
 
-	// Header.
-		if (!browser.mobile
-		&&	$header.hasClass('alt')
-		&&	$banner.length > 0) {
+  // Button.
+  $(
+    '<div id="navButton">' +
+      '<a href="#navPanel" class="toggle"></a>' +
+      "</div>"
+  ).appendTo($body);
 
-			$window.on('load', function() {
+  // Panel.
+  $(
+    '<div id="navPanel">' +
+      "<nav>" +
+      addOnClickToNavList() +
+      "</nav>" +
+      "</div>"
+  )
+    .appendTo($body)
+    .panel({
+      delay: 500,
+      hideOnClick: true,
+      hideOnSwipe: true,
+      resetScroll: true,
+      resetForms: true,
+      side: "left",
+      target: $body,
+      visibleClass: "navPanel-visible",
+    });
 
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt reveal'); },
-					leave:		function() { $header.removeClass('alt'); }
-				});
-
-			});
-
-		}
-
+  // Header.
+  if (!browser.mobile && $header.hasClass("alt") && $banner.length > 0) {
+    $window.on("load", function () {
+      $banner.scrollex({
+        bottom: $header.outerHeight(),
+        terminate: function () {
+          $header.removeClass("alt");
+        },
+        enter: function () {
+          $header.addClass("alt reveal");
+        },
+        leave: function () {
+          $header.removeClass("alt");
+        },
+      });
+    });
+  }
 })(jQuery);
