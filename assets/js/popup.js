@@ -55,8 +55,6 @@ const languagePopUpContainer = document.querySelector(
   ".pop-up-container.language"
 );
 
-console.log(aboutPopUpContainer);
-
 const closePopUp = (popUpContainer) => {
   if (popUpContainer == "about") {
     aboutPopUpContainer.classList.remove("show");

@@ -50,17 +50,28 @@
 }
 
 .vtuber-video {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
+  transform: scale(1);
 }
 
+.vtuber-video:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+}
 .video-title {
   text-align: center;
   background-color: var(--color-component-background);
   width: 100%;
+}
+.video-thumbnail {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .refresh-video {

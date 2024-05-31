@@ -11,9 +11,7 @@ function addOnClickToNavList() {
   // Iterate over each generated link and add the onclick attribute from the original
   tempContainer.find("a").each(function () {
     const originalHref = $(this).attr("href");
-    console.log(originalHref);
     const originalOnClick = $(`#nav a[href="${originalHref}"]`).attr("onclick");
-    console.log(originalOnClick);
     if (originalOnClick) {
       $(this).attr("onclick", originalOnClick);
     }
