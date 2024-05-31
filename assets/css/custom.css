@@ -53,7 +53,7 @@
 
 .video-title {
   text-align: center;
-  background-color: black;
+  background-color: var(--color-component-background);
   width: 100%;
 }
 
