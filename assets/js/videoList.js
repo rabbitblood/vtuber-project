@@ -79,8 +79,7 @@ const videoData = {
     video14: {
       title: "阿萨Aza",
       url: "https://space.bilibili.com/480680646",
-      thumbnail:
-        "https://static.wikia.nocookie.net/virtualyoutuber/images/1/1f/Aza_Portrait.png/revision/latest?cb=20210707081915",
+      thumbnail: "https://lain.bgm.tv/pic/crt/l/d7/b1/76658_crt_3ZYFQ.jpg",
     },
     video15: {
       title: "嘉然Diana",
